@@ -1,7 +1,7 @@
   
 import React, { useState, useEffect } from 'react';
 
-const API_URL = "http://localhost:8000"; // Update this to your deployed backend
+const API_URL = "https://grant-matching-app.onrender.com"; // Update this to your deployed backend
 
 function App() {
     const [grants, setGrants] = useState([]);
