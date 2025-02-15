@@ -1,3 +1,3 @@
 # Grant Matching App
 
-This project matches businesses with funding opportunities.
+This project helps match businesses with grants.

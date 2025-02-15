@@ -1,3 +1,2 @@
-  
-#!/bin/bash  
-echo "Deploying Grant Matching App..."  
+#!/bin/bash
+echo "Deploying Grant Matching App..."
