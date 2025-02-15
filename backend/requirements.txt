@@ -1,0 +1,5 @@
+fastapi[all]
+udatabase
+uvicorn
+requests
+psycopg2
