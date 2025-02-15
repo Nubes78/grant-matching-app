@@ -1,12 +1,38 @@
   
-import React from 'react';  
+import React, { useState, useEffect } from 'react';
 
-function App() {  
-    return (  
-        <div>  
-            <h1>Grant Matching App</h1>  
-        </div>  
-    );  
-}  
+const API_URL = "http://localhost:8000"; // Update this to your deployed backend
 
-export default App;  
+function App() {
+    const [grants, setGrants] = useState([]);
+    const [businesses, setBusinesses] = useState([]);
+    
+    useEffect(() => {
+        fetch(API_URL + "/grants/")
+            .then(res => res.json())
+            .then(data => setGrants(data));
+        fetch(API_URL + "/businesses/")
+            .then(res => res.json())
+            .then(data => setBusinesses(data));
+    }, []);
+
+    return (
+        <div>
+            <h1>Grant Matching App</h1>
+            <h2>Grants</h2>
+            <ul>
+                {grants.map(g => (
+                    <li key={g.id}>{g.title} - {g.technology}</li>
+                ))}
+            </ul>
+            <h2>Businesses</h2>
+            <ul>
+                {businesses.map(b => (
+                    <li key={b.id}>{b.name} - {b.industry}</li>
+                ))}
+            </ul>
+        </div>
+    );
+}
+
+export default App;
